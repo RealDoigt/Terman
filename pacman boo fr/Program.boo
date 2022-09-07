@@ -14,17 +14,15 @@ ghosts = List[of Character]()
 pacman as Character
 pellets as ushort
 
-# Trouve pacman et les fantômes
+# Find pacman and the ghosts
 for y in range(map.Height):
 	
 	for x in range(map.Width):
 		
 		 if Constants.IsGhost(map[x, y]):
-		 	#print "ghost x:$x y:$y"
 		 	ghosts.Add(Character(x, y, map[x, y]))
 		 	
 		 elif map[x, y] == Constants.PACMAN:
-		 	#print "pacman x:$x y:$y"
 		 	pacman = Character(x, y, map[x, y])
 		 	
 		 elif map[x, y] == Constants.PELLET or map[x, y] == Constants.SPECIAL_PELLET:
