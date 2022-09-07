@@ -1,4 +1,4 @@
-﻿namespace pacman_boo_fr
+﻿namespace terman_boo
 
 enum Directions:
 	Haut

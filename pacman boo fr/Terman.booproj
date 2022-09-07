@@ -5,8 +5,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Exe</OutputType>
-    <RootNamespace>pacman_boo_fr</RootNamespace>
-    <AssemblyName>pacman boo fr</AssemblyName>
+    <RootNamespace>terman_boo</RootNamespace>
+    <AssemblyName>Terman</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
@@ -49,9 +49,9 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.boo" />
     <Compile Include="Directions.boo" />
-    <Compile Include="Fantôme.boo" />
+    <Compile Include="Ghost.boo" />
     <Compile Include="GameConstants.boo" />
-    <Compile Include="Personnage.boo" />
+    <Compile Include="Character.boo" />
     <Compile Include="Program.boo" />
   </ItemGroup>
   <ItemGroup>

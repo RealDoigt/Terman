@@ -4,11 +4,11 @@ import System.Runtime.InteropServices
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("pacman boo fr")]
+[assembly: AssemblyTitle("Terman")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("pacman boo fr")]
+[assembly: AssemblyProduct("Terman")]
 [assembly: AssemblyCopyright("Copyright 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
