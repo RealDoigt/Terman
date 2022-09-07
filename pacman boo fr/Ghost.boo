@@ -3,64 +3,64 @@
 import System
 import ConsolePaint
 
-class Fantôme(Personnage):
+class Ghost(Character):
 	
-	enum Rôle:
+	enum Role:
 		Shadow
 		Speedy
 		Bashful
 		Pokey
 		
-	private rôle as Rôle
-	private celluleOccupée as ConsoleColor
+	private role as Role
+	private occupiedCell as ConsoleColor
 	
-	public def constructor(posX as int, posY as int, couleur as ConsoleColor, rôle as Rôle):
-		super(posX, posY, couleur)
+	public def constructor(posX as int, posY as int, color as ConsoleColor, role as Role):
+		super(posX, posY, color)
 		
-		self.rôle = rôle
+		self.role = role
 		
-	override def Bouger(carte as ConsoleImage):
+	override def Move(map as ConsoleImage):
 		
-		def échangerContenuCellule(nouveauX as int, nouveauY as int):
+		def swapCellContents(newX as int, newY as int):
 			
-			if nouveauX < carte.Width and nouveauX >= 0 and nouveauY < carte.Height and nouveauY >= 0:
+			if newX < map.Width and newX >= 0 and newY < map.Height and newY >= 0:
 				
-				if carte[nouveauX, nouveauY] == Constantes.GRANULE:
-					carte[X, Y] = celluleOccupée
-					celluleOccupée = Constantes.GRANULE
+				if map[newX, newY] == Constants.PELLET:
+					map[X, Y] = occupiedCell
+					occupiedCell = Constants.PELLET
 					
-				elif carte[nouveauX, nouveauY] == Constantes.GRANULE_SPÉCIALE:
-					carte[X, Y] = celluleOccupée
-					celluleOccupée = Constantes.GRANULE_SPÉCIALE
+				elif map[newX, newY] == Constants.PELLET_SPECIAL:
+					map[X, Y] = occupiedCell
+					occupiedCell = Constants.PELLET_SPECIAL
 					
-				elif carte[nouveauX, nouveauY] == Constantes.VIDE:
-					carte[X, Y] = celluleOccupée
-					celluleOccupée = Constantes.VIDE
+				elif map[newX, newY] == Constants.EMPTY:
+					map[X, Y] = occupiedCell
+					occupiedCell = Constants.EMPTY
 		
-		if DirectionPrésente == Directions.Haut:
-			échangerContenuCellule(X, Y - 1)
+		if CurrentDirection == Directions.Up:
+			swapCellContents(X, Y - 1)
 				
-		elif DirectionPrésente == Directions.Bas:
-			échangerContenuCellule(X, Y + 1)
+		elif CurrentDirection == Directions.Down:
+			swapCellContents(X, Y + 1)
 				
-		elif DirectionPrésente == Directions.Gauche:
-			échangerContenuCellule(X - 1, Y)
+		elif CurrentDirection == Directions.Left:
+			swapCellContents(X - 1, Y)
 			
-		else:# DirectionPrésente == Directions.Droite:
-			échangerContenuCellule(X + 1, Y)
+		else:# CurrentDirection == Directions.Right:
+			swapCellContents(X + 1, Y)
 			
-		if rôle == Rôle.Bashful:
+		if role == Role.Bashful:
 			pass
 			
-		elif rôle == Rôle.Pokey:
+		elif role == Role.Pokey:
 			pass
 			
-		elif rôle == Rôle.Shadow:
+		elif role == Role.Shadow:
 			pass
 			
-		elif rôle == Rôle.Speedy:
+		elif role == Role.Speedy:
 			pass
 		
-		super.Bouger(carte)
+		super.Move(map)
 	
 
