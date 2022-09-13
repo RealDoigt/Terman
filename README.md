@@ -1,5 +1,5 @@
 # Terman
-Terman (terminal + pacman), is an old pacman clone project which was originally made for a programming tutorial series (It was abandonned). If anyone is willing to translate the code's names for functions, variables, classes, etc. from french to english and/or continue the project into something more than an unfinished demo, it would be great. Please contact me on the Boo discord or open an issue if you're willing to take ownership of this repo.
+Terman (terminal + pacman), is an old pacman clone project which was originally made for a programming tutorial series (It was abandonned). If anyone is willing to continue the project into something more than an unfinished demo, it would be great. Please contact me on the Boo discord or open an issue if you're willing to take ownership of this repo.
 ## Windows Environment Setup
 To get Terman development operational on Windows, follow these steps:
 
@@ -10,7 +10,7 @@ To get Terman development operational on Windows, follow these steps:
 5. Unzip boo-latest.zip into a directory of choice: *C:\\Boo\\Boo-Latest\\*  
 6. Press the Windows key and search for "Edit the System Environment Variables". Activate the item when the match appears (this will take you to the dialog in Control Panel).  
 7. In the System Properties dialog window that comes up, it will already be on the "Advanced" tab, and there will be a button at the bottom for "Environment Variables...". Activate that button to launch the control panel for it.  
-8. In the next dialog that comes up, select the Path variable, then click "Edit..." for the User variables for «username». (You may also do this at a System level instead if you prefer, but you may need to reboot to allow this to take effect.)  
+8. In the next dialog that comes up, select the Path variable, then click "Edit..." for the User variables for Â«usernameÂ». (You may also do this at a System level instead if you prefer, but you may need to reboot to allow this to take effect.)  
 9. In the next dialog that comes up, click "New", and edit the new list entry, adding in the path where you unzipped boo-latest.zip (ex. *C:\\Boo\\Boo-Latest\\*)  
 10. Click "OK" through all open dialogs to return to your desktop.  
 11. Download SharpDevelop from https://sourceforge.net/projects/sharpdevelop/files/SharpDevelop%204.x/4.4/ and run the executable installer.
