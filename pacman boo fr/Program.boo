@@ -1,4 +1,4 @@
-﻿namespace pacman_boo_fr
+﻿namespace terman_boo
 
 import System
 import ConsolePaint
@@ -8,32 +8,30 @@ import System.Diagnostics
 
 Console.SetWindowSize(100, 30)
 
-carte = ConsoleImage(Bitmap("pacman map.png"))
+map = ConsoleImage(Bitmap("pacman map.png"))
 
-fantomes = List[of Personnage]()
-pacman as Personnage
-nbGranules as ushort
+ghosts = List[of Character]()
+pacman as Character
+pellets as ushort
 
-# Trouve pacman et les fantômes
-for y in range(carte.Height):
+# Find pacman and the ghosts
+for y in range(map.Height):
 	
-	for x in range(carte.Width):
+	for x in range(map.Width):
 		
-		 if Constantes.EstFantôme(carte[x, y]):
-		 	#print "ghost x:$x y:$y"
-		 	fantomes.Add(Personnage(x, y, carte[x, y]))
+		 if Constants.IsGhost(map[x, y]):
+		 	ghosts.Add(Character(x, y, map[x, y]))
 		 	
-		 elif carte[x, y] == Constantes.PACMAN:
-		 	#print "pacman x:$x y:$y"
-		 	pacman = Personnage(x, y, carte[x, y])
+		 elif map[x, y] == Constants.PACMAN:
+		 	pacman = Character(x, y, map[x, y])
 		 	
-		 elif carte[x, y] == Constantes.GRANULE or carte[x, y] == Constantes.GRANULE_SPÉCIALE:
-		 	++nbGranules
+		 elif map[x, y] == Constants.PELLET or map[x, y] == Constants.SPECIAL_PELLET:
+		 	++pellets
 			
 gameOver = false
 Console.CursorVisible = false
 
-def bougerPacman():
+def movePacman():
 	
 	while not gameOver:
 		
@@ -43,31 +41,31 @@ def bougerPacman():
 			gameOver = true
 			
 		elif input == ConsoleKey.W:
-			pacman.DirectionPrésente = Directions.Haut
+			pacman.CurrentDirection = Directions.Up
 			
 		elif input == ConsoleKey.S:
-			pacman.DirectionPrésente = Directions.Bas
+			pacman.CurrentDirection = Directions.Down
 			
 		elif input == ConsoleKey.A:
-			pacman.DirectionPrésente = Directions.Gauche
+			pacman.CurrentDirection = Directions.Left
 			
 		elif input == ConsoleKey.D:
-			pacman.DirectionPrésente = Directions.Droite
+			pacman.CurrentDirection = Directions.Right
 			
 			
-Thread(bougerPacman).Start()
+Thread(movePacman).Start()
 
 sw = Stopwatch()
 sw.Start()
 
 while not gameOver:
 	
-	carte.Paint()
+	map.Paint()
 	
 	if sw.ElapsedMilliseconds > 100:
 		
-		pacman.Bouger(carte)
-		carte[pacman.X, pacman.Y] = Constantes.PACMAN
+		pacman.Move(map)
+		map[pacman.X, pacman.Y] = Constants.PACMAN
 		sw.Restart()
 		
 	

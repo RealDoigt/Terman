@@ -1,7 +1,7 @@
-﻿namespace pacman_boo_fr
+﻿namespace terman_boo
 
 enum Directions:
-	Haut
-	Droite
-	Bas
-	Gauche
+	Up
+	Right
+	Down
+	Left
