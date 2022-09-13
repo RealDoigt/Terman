@@ -29,9 +29,9 @@ class Ghost(Character):
 					map[X, Y] = occupiedCell
 					occupiedCell = Constants.PELLET
 					
-				elif map[newX, newY] == Constants.PELLET_SPECIAL:
+				elif map[newX, newY] == Constants.SPECIAL_PELLET:
 					map[X, Y] = occupiedCell
-					occupiedCell = Constants.PELLET_SPECIAL
+					occupiedCell = Constants.SPECIAL_PELLET
 					
 				elif map[newX, newY] == Constants.EMPTY:
 					map[X, Y] = occupiedCell
